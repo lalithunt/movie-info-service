@@ -218,6 +218,29 @@ class MovieInfoApiControllerTest @Autowired constructor(
     }
 
     @Test
+    fun `saving a movie - with existing title and release date`() {
+        createAMovie(99)
+
+        val movieDto = MovieDto(
+            100,
+            "Pulp Fiction99",
+            "2020-10-14",
+            listOf("John Travolta1", "Uma Thurman")
+        )
+
+        val response = mockMvc.post(baseUrl) {
+            contentType = MediaType.APPLICATION_JSON
+            content = objectMapper.writeValueAsString(movieDto)
+        }
+        response
+            .andExpect {
+                status { isUnprocessableEntity() }
+                jsonPath("$.status") { value("RECORD_EXISTS") }
+                jsonPath("$.message") { value("Title and Release date combo already exits. Please pass unique combo value.") }
+            }
+    }
+
+    @Test
     fun `should return single movies - record with that id does not exists`() {
         mockMvc.get("$baseUrl/$recordDoesNotExistsId")
             .andExpect {
