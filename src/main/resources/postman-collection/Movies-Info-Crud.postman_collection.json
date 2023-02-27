@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "4ec37a51-a169-473a-8ba5-516309fc8ca0",
+		"name": "Movies-Info-Crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26047521"
+	},
+	"item": [
+		{
+			"name": "Add Movie Information",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n     \"title\": \"Pulp Fiction1\",\n     \"releaseDate\": \"2020-10-14\",\n     \"stars\": [\n           \"John Travolta1\",\n           \"Uma Thurman\",\n            \"Samuel L. Jackson\"\n      ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/info-guide/v1/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"info-guide",
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/info-guide/v1/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"info-guide",
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/info-guide/v1/movies/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"info-guide",
+						"v1",
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Movie Information",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n     \"title\": \"Pulp Fiction2\",\n     \"releaseDate\": \"2020-10-14\",\n     \"stars\": [\n           \"John Travolta\"\n      ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/info-guide/v1/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"info-guide",
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Movie By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/info-guide/v1/movies/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"info-guide",
+						"v1",
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
