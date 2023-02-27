@@ -14,7 +14,7 @@
 	<name>moviesinfoservice</name>
 	<description>Movies Info service, providing details for movies, also support CRUD operations.</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<kotlin.version>1.6.21</kotlin.version>
 	</properties>
 	<dependencies>
